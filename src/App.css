@@ -36,3 +36,69 @@
     transform: rotate(360deg);
   }
 }
+
+/* New Typography Styles */
+
+.display-title {
+  font-size: 64px;
+  font-weight: 500; /* Medium */
+  margin-bottom: 16px;
+}
+
+.sub-title {
+  font-size: 40px;
+  font-weight: 400; /* Regular */
+  margin-top: 16px;
+}
+
+.lead-text {
+  font-size: 18px;
+  font-weight: 500; /* Medium */
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 800; /* Extra Bold */
+  text-transform: uppercase;
+}
+
+.section-category {
+  font-size: 16px;
+  font-weight: 800; /* Extra Bold */
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700; /* Bold */
+}
+
+.paragraph-text {
+  font-size: 16px;
+  font-weight: 400; /* Regular */
+  line-height: 1.5;
+  max-width: 65ch; /* Approximately 65 characters per line */
+}
+
+.highlight-text {
+  font-size: 16px;
+  font-weight: 500; /* Medium */
+}
+
+/* Color Highlights */
+.highlight-green {
+  color: #49SE57;
+}
+
+.highlight-yellow {
+  color: #F4CE14;
+}
+
+/* Rounded corners */
+.rounded {
+  border-radius: 16px;
+}
+
+/* Icon styles can be added here if needed */
+.icon {
+  /* Add icon styles as needed */
+}
