@@ -1,10 +1,15 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Homepage from './Homepage';
+import BookingPage from './BookingPage';
 
 function Main() {
   return (
     <main>
-      <h2>Welcome to Little Lemon</h2>
-      <p>Enjoy our delicious Mediterranean cuisine!</p>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
     </main>
   );
 }

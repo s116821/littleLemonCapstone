@@ -102,3 +102,70 @@
 .icon {
   /* Add icon styles as needed */
 }
+/* Add these styles to the existing App.css file */
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.call-to-action {
+  background-color: #F4CE14;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cta-button {
+  background-color: #495E57;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.specials-grid, .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.special-card, .testimonial-card {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.chicago-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.chicago-content img {
+  max-width: 50%;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.booking-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
