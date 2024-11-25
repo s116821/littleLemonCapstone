@@ -1,17 +1,11 @@
 import React from 'react';
+import BookingForm from './BookingForm';
 
-function BookingPage() {
+function BookingPage({ availableTimes, updateTimes }) {
   return (
     <div className="booking-page">
-      <h1 className="display-title">Reserve a Table</h1>
-      <form className="booking-form">
-        <input type="text" placeholder="Name" className="rounded" />
-        <input type="email" placeholder="Email" className="rounded" />
-        <input type="date" className="rounded" />
-        <input type="time" className="rounded" />
-        <input type="number" placeholder="Number of guests" min="1" max="10" className="rounded" />
-        <button type="submit" className="cta-button rounded">Book Now</button>
-      </form>
+      <h1>Book a Table</h1>
+      <BookingForm availableTimes={availableTimes} updateTimes={updateTimes} />
     </div>
   );
 }
