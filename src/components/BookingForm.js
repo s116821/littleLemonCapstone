@@ -1,21 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function BookingForm({ availableTimes = [], updateTimes }) {
+function BookingForm({ availableTimes = [], updateTimes, submitForm }) {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
 
+  useEffect(() => {
+    console.log('Available times:', availableTimes);
+    console.log('updateTimes function:', updateTimes);
+  }, [availableTimes, updateTimes]);
+
   const handleDateChange = (e) => {
     const newDate = e.target.value;
     setDate(newDate);
-    updateTimes(newDate);
+    if (typeof updateTimes === 'function') {
+      updateTimes(newDate);
+    } else {
+      console.error('updateTimes is not a function:', updateTimes);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { date, time, guests, occasion });
-    // Here you would typically send the form data to a server
+    if (typeof submitForm === 'function') {
+      submitForm({ date, time, guests, occasion });
+    } else {
+      console.error('submitForm is not a function:', submitForm);
+    }
   };
 
   return (
@@ -37,9 +49,13 @@ function BookingForm({ availableTimes = [], updateTimes }) {
         required
       >
         <option value="">Select a time</option>
-        {availableTimes.map((timeOption) => (
-          <option key={timeOption} value={timeOption}>{timeOption}</option>
-        ))}
+        {Array.isArray(availableTimes) ? (
+          availableTimes.map((timeOption) => (
+            <option key={timeOption} value={timeOption}>{timeOption}</option>
+          ))
+        ) : (
+          <option value="">No available times</option>
+        )}
       </select>
 
       <label htmlFor="guests">Number of guests</label>
